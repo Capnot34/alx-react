@@ -1,5 +1,6 @@
 import react from "react";
 import "./Notifications.css";
+import closeIcon from "./close-icon.png"; 
 
 function Notifications() {
   return (
