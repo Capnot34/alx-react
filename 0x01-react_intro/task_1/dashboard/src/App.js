@@ -18,7 +18,9 @@ function App() {
         <p>Copyright 2020 - holberton School</p>
         <footer>
           <p>
-            {getFooterCopy(true)} - {getFullYear()}
+            <p>
+              Copyright {getFullYear()} - {getFooterCopy()}
+            </p>
           </p>
         </footer>
       </div>
