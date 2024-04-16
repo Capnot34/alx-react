@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-	  "build": "webpack --mode production"  
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +13,8 @@
     "jquery": "^3.7.1",
     "lodash": "^4.17.21",
     "webpack": "^5.91.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^5.1.4"
   }
 }

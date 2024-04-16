@@ -1,20 +1,20 @@
+'use strict';
 import $ from 'jquery';
 import _ from 'lodash';
 
-let count = 0;
+$('body').append('<p>Holberton Dashboard</p>');
+$('body').append('<p>Dashboard data for the students</p>');
+$('body').append('<button>Click here to get started</button>');
+$('body').append('<p id="count"></p>');
+$('body').append('<p>Copyright - Holberton School</p>');
 
-function updateCounter() {
-  count++;
-  $('#count').text(`${count} clicks on the button`);
-}
+const updateCounter = () => {
+  let ctimes = $('#count').html() || 0;
+  $('button').on('click', () => {
+    ctimes++;
+    $('#count').html(`${ctimes} clicks on the button`);
+  });
+};
 
-$('#button').on('click', _.debounce(updateCounter, 300));
-
-$(document).ready(function() {
-  $('<p>').text('Holberton Dashboard').appendTo('body');
-  $('<p>').text('Dashboard data for the students').appendTo('body');
-  $('<button>').text('Click here to get started').attr('id', 'button').appendTo('body');
-  $('<p>').attr('id', 'count').appendTo('body');
-  $('<p>').text('Copyright - Holberton School').appendTo('body');
-});
-
+_.debounce(updateCounter, 500);
+updateCounter();
