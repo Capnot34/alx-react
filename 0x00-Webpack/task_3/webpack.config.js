@@ -16,6 +16,12 @@ module.exports = {
     contentBase: [path.join(__dirname, "./public")],
     port: 8564,
   },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
+  },
+
   plugins: [
     new HtmlWebpackPlugin({
       title: "Webpack App",
