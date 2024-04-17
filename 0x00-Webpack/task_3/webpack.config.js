@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -12,6 +13,7 @@ module.exports = {
     maxAssetSize: 1000000,
   },
   devServer: {
+    contentBase: path.join(__dirname, "public"),
     port: 8564,
   },
   plugins: [
@@ -19,6 +21,7 @@ module.exports = {
       title: "Webpack App",
       template: "./index.html",
     }),
+    new CleanWebpackPlugin(),
   ],
 
   devtool: "inline-source-map",
