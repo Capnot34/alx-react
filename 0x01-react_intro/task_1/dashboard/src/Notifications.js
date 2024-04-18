@@ -1,5 +1,7 @@
-import react from 'react';
-import './Notifications.css';
+// task_1/dashboard/src/Notifications.js
+
+import React from "react";
+import "./Notifications.css";
 
 function Notifications() {
   return (
@@ -9,5 +11,5 @@ function Notifications() {
   );
 }
 
-
 export default Notifications;
+
