@@ -1,6 +1,7 @@
-import logo from "./logo.jpg";
-import "./App.css";
-import { getFullYear, getFooterCopy } from "./utils";
+import React from 'react';
+import { getFullYear, getFooterCopy } from './utils';
+import './App.css';
+import logo from './holberton-logo.jpg';
 
 function App() {
   return (
@@ -12,26 +13,24 @@ function App() {
 
       <div className="App-body">
         <p>Login to access the full dashboard</p>
+        <label htmlFor="email">Email:</label>
+        <input type="email" id="email" name="email" />
+
+        <label htmlFor="password">Password:</label>
+        <input type="password" id="password" name="password" />
+
+        <button>OK</button>
       </div>
 
-      <div className="App-footer">
-        <p>Copyright 2020 - holberton School</p>
-        <br></br>
-        <label htmlFor="email"> Email: </label>
-        <input type="email" id="email" name="email" />
-        <label htmlFor="password"> Password: </label>
-        <input type="password" id="password" name="password" />
-        <button> OK</button>
-        <footer>
-          <p>
-            <p>
-              Copyright {getFullYear()} - {getFooterCopy()}
-            </p>
-          </p>
-        </footer>
-      </div>
+      <footer className="App-footer">
+        <p>{getFooterCopy(true)}</p>
+        <p>
+          Copyright {getFullYear()} - {getFooterCopy(false)}
+        </p>
+      </footer>
     </div>
   );
 }
 
 export default App;
+
