@@ -5,9 +5,16 @@ import Notifications from './Notifications';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const notificationsRoot = document.getElementById('root-notifications');
+
 root.render(
   <React.StrictMode>
     <App />
+  </React.StrictMode>
+);
+
+ReactDOM.createRoot(notificationsRoot).render(
+  <React.StrictMode>
     <Notifications />
   </React.StrictMode>
 );
@@ -16,3 +23,4 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
