@@ -10,8 +10,25 @@
 
 .App-body{
   text-align: left;
-  padding-left: 3rem;
-  padding-bottom: 20rem;
+  padding: 2rem 0 20rem 3rem;
+}
+
+.App-body label {
+  padding-right: 1rem;
+}
+
+.App-body input {
+  margin-right: 1rem;
+}
+
+.App-body button {
+  background-color:transparent;
+  color: black;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0.1rem rgba(0,0,0,0.5);
+  cursor: pointer;
 }
 /* @media (prefers-reduced-motion: no-preference) {
   .App-logo {

@@ -14,7 +14,7 @@ function Notifications() {
         className="close-button"
         aria-label="Close"
         onClick={handleButtonClick}
-        style={{ float: "right" }}
+        style={{ float: "right", border: "none", backgroundColor: "transparent"}}
       >
         <img src={closeIcon} alt="Close icon" />
       </button>
