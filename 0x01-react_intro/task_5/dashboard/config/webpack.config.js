@@ -1,25 +1,18 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { HotModuleReplacementPlugin } = require("webpack");
 
 module.exports = {
   mode: "development",
-  entry: "./../src/index.js", 
-
   devtool: "inline-source-map",
-  devServer: {
-    contentBase: path.resolve(__dirname, "./../dist"), 
-    hot: true,
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./../dist/index.html", 
-    }),
-    new HotModuleReplacementPlugin(),
-  ],
+  entry: "./src/index.js",
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "./../dist"), 
+    path: path.resolve("./dist"),
+  },
+  devServer: {
+    hot: true,
+    contentBase: path.resolve("./dist"),
+    compress: true,
+    port: 3000,
   },
   module: {
     rules: [
@@ -28,8 +21,24 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
+        test: /\.(jpg|png)$/i,
+        use: [
+          "file-loader",
+          {
+            loader: "image-webpack-loader",
+            options: {
+              bypassOnDebug: true,
+              disable: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.jsx?$/i,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
       },
     ],
   },
