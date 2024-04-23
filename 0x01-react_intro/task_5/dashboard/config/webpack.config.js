@@ -1,4 +1,6 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { HotModuleReplacementPlugin } = require("webpack");
 
 module.exports = {
   mode: "development",
@@ -14,6 +16,12 @@ module.exports = {
     compress: true,
     port: 3000,
   },
+	plugins: [
+    new HtmlWebpackPlugin({
+      template: './dist/index.html',
+    }),
+		 new HotModuleReplacementPlugin(),
+  ],
   module: {
     rules: [
       {
