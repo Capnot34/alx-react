@@ -1,5 +1,5 @@
 import { getFullYear, getFooterCopy } from './utils';
-import { getLatestNotification } from './Notifications';
+import { getLatestNotification } from './utils';
 
 describe('getFullYear function', () => {
   it('returns the current year', () => {
