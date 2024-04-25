@@ -13,16 +13,18 @@ describe('Notifications component', () => {
     expect(wrapper.find(NotificationItem)).toHaveLength(3);
   });
 
-  it('renders the text "Here is the list of notifications"', () => {
-    const wrapper = shallow(<Notifications />);
-    expect(wrapper.text()).toContain('Here is the list of notifications');
+    it('renders the text "Here is the list of notifications"', () => {
+      const wrapper = shallow(<Notifications />);
+      expect(wrapper.text()).toContain('Here is the list of notifications');
+    });
+
+    it('first NotificationItem element renders the right html', () => { 
+      const wrapper = shallow(<Notifications />);
+      expect(wrapper.find(NotificationItem).at(0).html()).toEqual(
+        '<li data-notification-type="default">New course available</li>'
+      );
+    });
+
   });
 
-  it('first NotificationItem element renders the right html', () => {
-    const wrapper = shallow(<Notifications />);
-    expect(wrapper.find(NotificationItem).first().html()).toContain('data-notification-type="default"');
-    expect(wrapper.find(NotificationItem).first().text()).toContain(
-      "New course available"
-    );
-  });
-});
+  
