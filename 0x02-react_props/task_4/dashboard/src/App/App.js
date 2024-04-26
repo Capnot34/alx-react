@@ -8,18 +8,34 @@ import "../App/App.css";
 import CourseList from "../CourseList/CourseList";
 
 
-function App() {
-  return (
-    <>
-      <Notifications />
-      <div className="App">
-        <Header />
-        <Login />
-        <Footer />
-        
-      </div>
-    </>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoggedIn: false,
+    };
+  }
+
+  render() {
+    return (
+      <>
+        <Notifications />
+        <div className="App">
+          <Header />
+          {this.state.isLoggedIn ? <CourseList /> : <Login />}
+          <Footer />
+        </div>
+      </>
+    );
+  }
+}
+
+App.defaultProps = {
+  isLoggedIn: false,
+};
+
+App.propTypes = {
+  isLoggedIn: PropTypes.bool,
 }
 
 export default App;

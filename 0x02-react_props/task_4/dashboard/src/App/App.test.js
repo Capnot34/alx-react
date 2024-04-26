@@ -6,7 +6,7 @@ import Header from "../Header/Header";
 import Login from "../Login/Login";
 import Footer from "../Footer/Footer";
 
-describe("App", () => {
+describe("<App />", () => {
   it("renders without crashing", () => {
     shallow(<App />);
   });
@@ -24,6 +24,29 @@ describe("App", () => {
   it("it contains the Login component", () => {
     const wrapper = shallow(<App />);
     expect(wrapper.contains(<Login />)).toEqual(true);
+  });
+  
+
+  it("it contains the Footer component", () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.contains(<Footer />)).toEqual(true);
+  });
+
+  it("does not contain the CourseList component when isLoggedIn is false", () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.contains(<CourseList />)).toEqual(false);
+  });
+
+  describe("when isLoggedIn is true", () => {
+    it("does not contain the Login component", () => {
+      const wrapper = shallow(<App isLoggedIn />);
+      expect(wrapper.contains(<Login />)).toEqual(false);
+    });
+
+    it("contains the CourseList component", () => {
+      const wrapper = shallow(<App isLoggedIn />);
+      expect(wrapper.contains(<CourseList />)).toEqual(true);
+    });
   });
 });
 
