@@ -1,0 +1,20 @@
+/* task_1/dashboard/src/Notifications.css */
+
+.Notifications {
+  border: 3px dotted rgb(217, 48, 48);
+  padding: 20px;
+}
+
+ [data-notification-type="default"] {
+  color: blue; /* Style default priority notifications */
+}
+
+ [data-notification-type="urgent"], ul li:last-child{
+  color: red; /* Style urgent priority notifications */
+}
+
+
+.close-button img{
+  display: inline-block;
+  width: 0.625rem;
+}
